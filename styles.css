@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #fffbf5;
+     font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main{
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+#cadastroContainer{
+    box-shadow: 2px 2px 8px gray;
+    border-radius: 10px;
+
+    & h1{
+        padding: 15px;
+    }
+
+    & form{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+
+        & div{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    & input{
+        background-color: transparent;
+        border: 1px solid gray;
+        border-radius: 2px;
+    }
+}
+
+#footerCriarContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #8DB1AB;
+    height: 60px;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+
+    & button{
+        height: 40px;
+        padding: 4px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+#salvar{
+    background-color: #ffe100;
+}
+
+#limpar{
+    background-color: #fffb92;
+}
+
+#visualizarContainer{
+    box-shadow: 2px 2px 8px gray;
+    border-radius: 10px;
+    padding: 15px;
+
+    & h1{
+        padding: 20px;
+    }
+    & table{
+
+        border-spacing: 20px;        
+
+    }
+}
+
+.botaoEditar{
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.botaoRemover{
+    background-color: red;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.divAcoes{
+    padding: 5px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Alunos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="crud.js"></script>
+</head>
+<body onload="visualizarCadastro()">
+    <main>
+        <div id="cadastroContainer">
+            <h1>Cadastrar Aluno</h1>
+            <form>
+                <div>
+                    <label for="nome">Nome Completo*</label>
+                    <input id="nome" type="name">
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email">
+                </div>
+
+                <div>
+                    <label for="celular">Celular</label>
+                    <input id="celular">
+                </div>
+                <div>
+                    <label for="logradouro">Logradouro</label>
+                    <input id="logradouro">
+                </div>
+
+                 <div>
+                    <label for="bairro">Bairro</label>
+                    <input id="bairro">
+                </div>
+
+                <div>
+                    <label for="cidade">Cidade</label>
+                    <input id="cidade">
+                </div>
+
+                <div>
+                    <label for="estado">Estado</label>
+                    <input id="estado">
+                </div>
+
+                <div>
+                    <label for="cep">CEP</label>
+                    <input id="cep">
+                </div>
+            </form>
+            <div id="footerCriarContainer">
+                <button id="limpar" onclick="limparCampos()">Limpar campos</button>
+                <button id="salvar" onclick="salvarCadastro()">Salvar</button>
+            </div>
+        </div>
+        <div id="visualizarContainer">
+            <h1>Alunos Cadastrados</h1>
+            <table>
+                <thead>
+                    <th>Alunos</th>
+                    <th>E-mail</th>
+                    <th>Celular</th>
+                    <th>Cidade/UF</th>
+                    <th>CEP</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody id="corpoTabela">
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
