@@ -59,6 +59,7 @@ const putAluno = async (aluno) => {
 
   const response = await fetch(`${BASE_URL}/${aluno.id}`, options);
   const data = await response.json();
+  
   return data;
 };
 /*
@@ -113,7 +114,50 @@ function salvarCadastro(){
   postAluno(aluno)
 }
 
+
+function atualizarCadastro(id){
+  const nome = document.getElementById('nome')
+  const email = document.getElementById('email')
+  const celular = document.getElementById('celular')
+  const logradouro = document.getElementById('logradouro')
+  const bairro = document.getElementById('bairro')
+  const cidade = document.getElementById('cidade')
+  const estado = document.getElementById('estado')
+  const cep = document.getElementById('cep')
+
+  const alunoEditado = {
+    id: id,
+    nome: nome.value,
+    email: email.value,
+    celular: celular.value,
+    logradouro: logradouro.value,
+    bairro: bairro.value,
+    cidade: cidade.value,
+    estado: estado.value,
+    cep: cep.value
+  };
+
+  const botaoSalvar = document.getElementById('salvar')
+
+  botaoSalvar.removeEventListener('click', atualizarCadastro)
+  botaoSalvar.addEventListener('click', salvarCadastro)
+  botaoSalvar.textContent = "Salvar"
+  botaoSalvar.style.backgroundColor = "#ffe100"
+  botaoSalvar.style.color = "black"
+
+  putAluno(alunoEditado)
+}
+
 async function editarCadastro(id) {
+  const botaoSalvar = document.getElementById('salvar')
+
+  botaoSalvar.removeEventListener('click', salvarCadastro)
+  botaoSalvar.addEventListener('click', atualizarCadastro.bind(null, id))
+
+  botaoSalvar.textContent = "Atualizar"
+  botaoSalvar.style.backgroundColor = "blue"
+  botaoSalvar.style.color = "white"
+
   const aluno = await getAluno(id)
 
   const nome = document.getElementById('nome')
@@ -203,3 +247,6 @@ async function visualizarCadastro(){
     corpo.append(rowAtual)
   }
 }
+
+const botaoSalvar = document.getElementById('salvar')
+botaoSalvar.addEventListener('click', salvarCadastro)
